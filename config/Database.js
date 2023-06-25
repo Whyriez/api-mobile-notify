@@ -6,11 +6,11 @@ import { Sequelize } from "sequelize";
 // });
 
 const db = new Sequelize(
-  "secret-chat",
-  "a9627n062go85cg42n92",
-  "pscale_pw_LIgY5s7TezAAbfmqQRHX59OwrCgdEDy56fNTD9LPS6C",
+  process.env.DATABASE,
+  process.env.USERNAME,
+  process.env.PASSWORD,
   {
-    host: "ap-southeast.connect.psdb.cloud",
+    host: process.env.HOST,
     dialect: "mysql",
     dialectOptions: {
       ssl: {
