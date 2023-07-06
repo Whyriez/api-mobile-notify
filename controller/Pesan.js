@@ -83,29 +83,29 @@ export const createPesan = async (req, res) => {
   }
 };
 
-export const createFCM = async (req, res, next) => {
-  try {
-    request({
-      url: "https://fcm.googleapis.com/fcm/send",
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: ["key", process.env.SERVER_KEY].join("="),
-      },
-      json: {
-        to: req.body.token,
-        notification: {
-          title: req.body.title,
-          body: req.body.body,
-        },
-      },
-    });
+// export const createFCM = async (req, res, next) => {
+//   try {
+//     request({
+//       url: "https://fcm.googleapis.com/fcm/send",
+//       method: "POST",
+//       headers: {
+//         "Content-Type": "application/json",
+//         Authorization: ["key", process.env.SERVER_KEY].join("="),
+//       },
+//       json: {
+//         to: req.body.token,
+//         notification: {
+//           title: req.body.title,
+//           body: req.body.body,
+//         },
+//       },
+//     });
 
-    res.status(201).json({ msg: "Success" });
-  } catch (error) {
-    console.log(error.message);
-  }
-};
+//     res.status(201).json({ msg: "Success" });
+//   } catch (error) {
+//     console.log(error.message);
+//   }
+// };
 
 export const updatePesan = async (req, res) => {
   try {
