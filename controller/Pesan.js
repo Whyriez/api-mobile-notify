@@ -2,7 +2,7 @@ import Pesan from "../models/PesanModel.js";
 import Komen from "../models/KomenModel.js";
 import Header from "../models/HeaderUser.js";
 import db from "../config/Database.js";
-import FCM from "fcm-node/lib/fcm.js";
+// import FCM from "fcm-node/lib/fcm.js";
 
 import request from "request";
 
