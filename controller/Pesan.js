@@ -35,7 +35,6 @@ export const getPesanByIdAndNotify = async (req, res) => {
     const response = await Pesan.findAll({
       where: {
         uuid: req.params.id,
-        notify: 0,
       },
       order: [["is_read", "ASC"]],
     });
