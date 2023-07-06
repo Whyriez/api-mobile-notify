@@ -1,6 +1,5 @@
 import { Sequelize } from "sequelize";
 import db from "../config/Database.js";
-import Pesan from "./PublicPesanModel.js";
 
 const { DataTypes } = Sequelize;
 
