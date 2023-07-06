@@ -48,6 +48,10 @@ const Users = db.define(
       type: DataTypes.BOOLEAN,
       allowNull: true,
     },
+    token: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   },
   {
     freezeTableName: true,

@@ -15,7 +15,15 @@ export const getUsers = async (req, res) => {
 export const getUsersById = async (req, res) => {
   try {
     const response = await Users.findOne({
-      attributes: ["uuid", "name", "email", "role", "createdAt", "updatedAt"],
+      attributes: [
+        "uuid",
+        "name",
+        "email",
+        "role",
+        "token",
+        "createdAt",
+        "updatedAt",
+      ],
       where: {
         uuid: req.params.id,
       },
@@ -27,7 +35,7 @@ export const getUsersById = async (req, res) => {
 };
 
 export const createUsers = async (req, res) => {
-  const { name, email, password, confirmPassword, role } = req.body;
+  const { name, email, password, confirmPassword, role, token } = req.body;
   if (password != confirmPassword)
     return (
       req,
@@ -61,6 +69,7 @@ export const createUsers = async (req, res) => {
       email: email,
       password: hashPassword,
       role: role,
+      token: token,
     });
     res.status(201).json({ message: "Register Successfully" });
   } catch (error) {

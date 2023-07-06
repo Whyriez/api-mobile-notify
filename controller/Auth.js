@@ -15,13 +15,12 @@ export const Login = async (req, res) => {
   const name = user.name;
   const email = user.email;
   const role = user.role;
-  res
-    .status(200)
-    .json({
-      data: { uuid, name, email, role },
-      code: 200,
-      message: "Berhasil Login",
-    });
+  const token = user.token;
+  res.status(200).json({
+    data: { uuid, name, email, role, token },
+    code: 200,
+    message: "Berhasil Login",
+  });
 };
 
 export const Me = async (req, res) => {
@@ -39,6 +38,36 @@ export const Me = async (req, res) => {
     if (!user) return res.status(404).json({ message: "User Not Found" });
     res.status(200).json(user);
   }
+};
+
+export const ValidateUser = async (req, res) => {
+  const user = await Users.findOne({
+    attributes: ["uuid", "name", "email", "role"],
+    where: {
+      name: req.params.name,
+    },
+  });
+  if (!user) return res.status(404).json({ message: "User Not Found" });
+  res.status(200).json({
+    data: user,
+    code: 200,
+    message: "Ada Data",
+  });
+};
+
+export const ValidateEmail = async (req, res) => {
+  const user = await Users.findOne({
+    attributes: ["uuid", "name", "email", "role"],
+    where: {
+      email: req.params.email,
+    },
+  });
+  if (!user) return res.status(404).json({ message: "User Not Found" });
+  res.status(200).json({
+    data: user,
+    code: 200,
+    message: "Ada Data",
+  });
 };
 
 // export const Me = async (req, res) => {
