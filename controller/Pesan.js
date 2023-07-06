@@ -30,21 +30,6 @@ export const getPesanById = async (req, res) => {
   }
 };
 
-export const getPesanByIdAndNotify = async (req, res) => {
-  try {
-    const response = await Pesan.findAll({
-      where: {
-        uuid: req.params.id,
-      },
-      order: [["is_read", "ASC"]],
-    });
-
-    res.status(200).json(response);
-  } catch (error) {
-    console.log(error.message);
-  }
-};
-
 export const getPesanDById = async (req, res) => {
   try {
     const response = await Pesan.findAll({
