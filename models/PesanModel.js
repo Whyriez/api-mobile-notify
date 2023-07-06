@@ -31,9 +31,6 @@ const Pesan = db.define(
     is_read: {
       type: DataTypes.BOOLEAN,
     },
-    notify: {
-      type: DataTypes.BOOLEAN,
-    },
   },
   {
     freezeTableName: true,
