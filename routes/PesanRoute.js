@@ -13,14 +13,12 @@ import {
   getKomentar,
   deleteKomenid,
   deleteKomenUid,
-  getPesanByIdAndNotify,
 } from "../controller/Pesan.js";
 
 const router = express.Router();
 
 router.get("/pesan-saya", getPesan);
 router.get("/pesan-saya/:id", getPesanById);
-router.get("/pesan-sayanotify/:id", getPesanByIdAndNotify);
 router.get("/pesan-sayaid/:id", getPesanDById);
 router.post("/pesan-saya", createPesan);
 router.patch("/pesan-saya/:id", updatePesan);
