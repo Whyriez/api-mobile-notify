@@ -113,7 +113,7 @@ export const deletePesan = async (req, res) => {
         uuid: req.params.id,
       },
     });
-    res.status(200).json({ msg: "Pesan Deleted" });
+    res.status(200).json(1);
   } catch (error) {
     console.log(error.message);
   }
