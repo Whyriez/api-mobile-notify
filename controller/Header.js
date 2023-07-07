@@ -69,7 +69,7 @@ export const deleteHeader = async (req, res) => {
         uuid: req.params.id,
       },
     });
-    res.status(200).json({ msg: "Header Deleted" });
+    res.status(200).json(1);
   } catch (error) {
     console.log(error.message);
   }
