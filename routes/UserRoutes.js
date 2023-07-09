@@ -5,6 +5,7 @@ import {
   createUsers,
   updateUsers,
   deleteUsers,
+  updateUsersByUUID,
 } from "../controller/Users.js";
 import { verifyUser, adminOnly } from "../middleware/AuthUser.js";
 
@@ -15,6 +16,7 @@ router.get("/users/:id", getUsersById);
 router.get("/tokens/:id", getUsersById);
 router.post("/users", createUsers);
 router.patch("/users/:id", updateUsers);
+router.patch("/uusers/:id", updateUsersByUUID);
 router.delete("/users/:id", deleteUsers);
 
 export default router;
