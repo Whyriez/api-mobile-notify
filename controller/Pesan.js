@@ -58,6 +58,7 @@ export const createPesan = async (req, res) => {
         notification: {
           title: "Anda mempunyai sebuah pertanyaan baru",
           body: "klik untuk membuka!",
+          icon: "logo",
         },
       },
     });
