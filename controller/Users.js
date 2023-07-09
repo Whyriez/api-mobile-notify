@@ -119,6 +119,19 @@ export const updateUsers = async (req, res) => {
   }
 };
 
+export const updateUsersByUUID = async (req, res) => {
+  try {
+    await Users.update(req.body, {
+      where: {
+        uuid: req.params.id,
+      },
+    });
+    res.status(200).json(1);
+  } catch (error) {
+    res.status(400).json({ message: error.message });
+  }
+};
+
 export const deleteUsers = async (req, res) => {
   const user = await Users.findOne({
     where: {
