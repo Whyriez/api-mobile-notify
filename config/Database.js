@@ -29,11 +29,11 @@ const db = new Sequelize(
     host: process.env.HOST,
     port: process.env.PORT,
     dialect: "mysql",
-    dialectOptions: {
-      ssl: {
-        rejectUnauthorized: true,
-      },
-    },
+    // dialectOptions: {
+    //   ssl: {
+    //     rejectUnauthorized: true,
+    //   },
+    // },
   }
 );
 
