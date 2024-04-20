@@ -1,6 +1,4 @@
 import { Sequelize } from "sequelize";
-import dotenv from "dotenv";
-dotenv.config();
 // const db = new Sequelize("secret", "root", "", {
 //   host: "localhost",
 //   dialect: "mysql",
@@ -27,13 +25,13 @@ const db = new Sequelize(
   process.env.PASSWORD,
   {
     host: process.env.HOST,
-    port: 3307,
-    dialect: "mysql",
-    // dialectOptions: {
-    //   ssl: {
-    //     rejectUnauthorized: true,
-    //   },
-    // },
+    port: 26257,
+    dialect: "postgres",
+    dialectOptions: {
+      ssl: {
+        rejectUnauthorized: true,
+      },
+    },
   }
 );
 
